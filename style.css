@@ -30,26 +30,29 @@
 .loader--1 {
     --loader-size: calc(var(--block-size)/3);
     --anim-duration: 1s;
-    --loader-1-dist: calc(var(--loader-size) - var(dot-size-half)+1px);
-    aspect-ratio: 1/1;
-    border:1px solid var(--light-color);
+    --loader-1-dist: calc(var(--loader-size) - var(dot-size-half) + 1px);
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--light-color);
 }
-.loader--1::before,.loader--1::after{
-    width:var(--dot-size);
-    aspect-ratio: 1/1;
-    background:currentColor;
+.loader--1::before,
+.loader--1::after {
+    width: var(--dot-size);
+    aspect-ratio: 1 / 1;
+    background: currentColor;
     border-radius: 50%;
-    top:var(--dot-size-half-neg);
-    left:var(--dot-size-half-neg);
-    animation:loader-1 var(--anim-duration) cubic-bezier(0.27,0.08,0.26,0.7) infinite;
+    top: var(--dot-size-half-neg);
+    left: var(--dot-size-half-neg);
+    animation: loader-1 var(--anim-duration) cubic-bezier(0.27, 0.08, 0.26, 0.7) infinite;
 }
 .loader--1::after {
-animation-delay: calc(var(--anim-duration)/ 4 * -1);
+animation-delay: calc(var(--anim-duration) / 4 * -1);
 }
+
 @keyframes loader-1{
-    0%,100%{ transform:none;} 25%{ transform:translateX(var(--loader-1-dist));}
-    50% { transform:translateX(var(--loader-1-dist))translateY(var(--loader-1-dist));}
-    75%{ transform:translateX(0)translateY(var(--loader-1-dist));}
+    0%, 100% { transform:none;} 
+    25% { transform: translateX(var(--loader-1-dist));}
+    50% { transform: translateX(var(--loader-1-dist)) translateY(var(--loader-1-dist));}
+    75% { transform: translateX(0) translateY(var(--loader-1-dist));}
 }
 
 .container {
