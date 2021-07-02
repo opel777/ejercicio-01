@@ -40,17 +40,15 @@
     animation: loader-1 var(--anim-duration) cubic-bezier(0.27, 0.08, 0.26, 0.7) infinite;
 }
 .loader--1::after {
-animation-delay: calc(var(--anim-duration) / 5 * -1);
+    animation-delay: calc(var(--anim-duration) / 5 * -1);
 }
 
 @keyframes loader-1 {
-     100%,0% { transform: none;} 
+    100%,0% { transform: none;} 
     25% { transform: translateX(var(--loader-1-dist));}
     50% { transform: translateX(var(--loader-1-dist)) translateY(var(--loader-1-dist));}
     75% { transform: translateX(0) translateY(var(--loader-1-dist));}
 }
-
-
 
 /* loader--2 */
 
@@ -72,7 +70,7 @@ animation-delay: calc(var(--anim-duration) / 5 * -1);
 }
 
 .loader--2::after {
-animation-delay: calc(var(--anim-duration) / 3 * -1);
+    animation-delay: calc(var(--anim-duration) / 3 * -1);
 
 }
 
@@ -102,7 +100,7 @@ animation-delay: calc(var(--anim-duration) / 3 * -1);
 }
 
 .loader--3::after {
-animation-delay: calc(var(--anim-duration) / 2 * -1);
+    animation-delay: calc(var(--anim-duration) / 2 * -1);
 
 }
 
@@ -146,7 +144,7 @@ animation-delay: calc(var(--anim-duration) / 2 * -1);
     width: 65%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-   border: 1px solid currentColor;
+    border: 1px solid currentColor;
 }
 
 @keyframes loader-4 {
@@ -180,29 +178,57 @@ animation-delay: calc(var(--anim-duration) / 2 * -1);
     transform-origin: left calc(var(--loader-size) * -1);
 }
 .loader--5::after {
---turn-deg: 60deg;
---x-dist: 25%;
-transform-origin: right calc(var(--loader-size) * -1);
-animation-delay: calc(var(--anim-duration) / 2 * -1);
+    --turn-deg: 60deg;
+    --x-dist: 25%;
+    transform-origin: right calc(var(--loader-size) * -1);
+    animation-delay: calc(var(--anim-duration) / 2 * -1);
 }
 @keyframes loader-5{
     0%{transform:scale(0.3)translateZ(-15vmin) rotateY(calc(var(--turn-deg) * -1));}
     0%,100%{opacity:0;}
-    33%{
-        opacity: 0.8;
+    33%{opacity: 0.8;
         transform:scale(1.2)translateZ(5vmin) translateX(var(--x-dist));}
     100%{transform:scale(1.2) translateZ(5vmin) translateX(var(--x-dist)) rotateY(var(--turn-deg));}
-
-
 }
+
+/* loader--6 */
+.loader--6 {
+    --loader-size: calc(var(--block-size) / 3);
+    --anim-duration: 1.2s;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--light-color);
+    border-radius: 50%;
+    animation: loader-6 calc(var(--anim-duration) * 3) linear infinite;
+}
+.loader--6::before,
+.loader--6::after {
+    width: var(--dot-size);
+    aspect-ratio: 1 / 1;
+    background: currentColor;
+    border-radius: 50%;
+    top: var(--dot-size-half-neg);
+    left: calc(50% - var(--dot-size-half));
+    animation: loader-6 var(--anim-duration) cubic-bezier(0.27, 0.08, 0.26, 0.7) infinite;
+    transform-origin: center calc(var(--loader-size-half) + var(--dot-size-half) - 1px);
+}
+.loader--6::after {
+    animation-delay: calc(var(--anim-duration) / 3 * -1);
+}
+
+@keyframes loader-6 {
+    100%{ transform: rotate(1turn);} 
+   
+}
+
 
 .container {
---block-size: 18vmin;
-display: grid;
-grid-template-columns: repeat(3, var(--block-size));
-grid-template-rows: repeat(3, var(--block-size));
-grid-gap: 1vmin;
+   --block-size: 18vmin;
+   display: grid;
+   grid-template-columns: repeat(3, var(--block-size));
+   grid-template-rows: repeat(3, var(--block-size));
+   grid-gap: 1vmin;
 }
+
 
 .item {
     background:rgba(255, 255, 255, 0.1);
