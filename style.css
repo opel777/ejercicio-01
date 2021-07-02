@@ -14,7 +14,7 @@
     display: grid;
     place-items: center;
     color:white;
-}
+} 
 .loader::before,
 .loader::after {
     content:'';
@@ -32,7 +32,7 @@
 .loader--1::before,
 .loader--1::after {
     width: var(--dot-size);
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
     background: currentColor;
     border-radius: 50%;
     top: var(--dot-size-half-neg);
@@ -40,51 +40,51 @@
     animation: loader-1 var(--anim-duration) cubic-bezier(0.27, 0.08, 0.26, 0.7) infinite;
 }
 .loader--1::after {
-animation-delay: calc(var(--anim-duration) / 4 * -1);
+animation-delay: calc(var(--anim-duration) / 5 * -1);
 }
 
 @keyframes loader-1 {
-    0%, 100% { transform: none;} 
+     100%,0% { transform: none;} 
     25% { transform: translateX(var(--loader-1-dist));}
     50% { transform: translateX(var(--loader-1-dist)) translateY(var(--loader-1-dist));}
     75% { transform: translateX(0) translateY(var(--loader-1-dist));}
 }
 
 .container {
-    --block-size: 18vmin;
+--block-size: 18vmin;
 display: grid;
-grid-template-columns: repeat(3,var(--block-size));
-grid-template-rows: repeat(3,var(--block-size));
+grid-template-columns: repeat(3, var(--block-size));
+grid-template-rows: repeat(3, var(--block-size));
 grid-gap: 1vmin;
 }
-.item{
+.item {
     background:rgba(255, 255, 255, 0.1);
     display: grid;
     place-items: center;
     border-radius: 4px;
     transition: opacity 0.4s ease;
 }
-.container:hover .item{
+.container:hover .item {
     opacity: 0.3;
 }
-.container:hover .item:hover{
+.container:hover .item:hover {
     opacity: 1;
 }
-.page{
-    margin:auto;
+.page {
+    margin: auto;
 }
-.header{
+.header {
     margin-bottom: 4vmin;
 }
-.header-title{
+.header-title {
     font-size:3.75vmin;
 }
-.header-subtitle{
+.header-subtitle {
     font-size:2vmin;
     text-decoration:uppercase;
     opacity:0.6;
 }
-html,body{
+html,body {
     margin:0;
     display:flex;
     width: 100%;
@@ -95,6 +95,6 @@ html,body{
     letter-spacing: 0.3px;
     background:linear-gradient(to right,#F27121,#E94057,#8A2387);
 }
-*,*::before,::after{
+*, *::before, *::after {
     box-sizing: border-box;
 }
