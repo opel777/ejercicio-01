@@ -1,36 +1,31 @@
-/* body{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(65,9,121,1) 35%, rgba(0,212,255,1) 100%);
-}
-.page{
-    text-align: center;
-} */
+
 .loader {
-    --loader-size: calc(var(--block-size)/2);
-    --loader-size-half: calc(var(--loader-size)/2);
-    --loader-size-half-neg: calc(var(--loader-size-half)*-1);
-    --light-color: rgba(255,255,255,0.3);
+    --loader-size: calc(var(--block-size) / 2);
+    --loader-size-half: calc(var(--loader-size) / 2);
+    --loader-size-half-neg: calc(var(--loader-size-half) * -1);
+    --light-color: rgba(255, 255, 255, 0.3);
     --dot-size: 5px;
-    --dot-size-half: calc(var(--dot-size)/2);
-    --dot-size-half-neg: calc(var(--dot-size-half)*-1|);
+    --dot-size-half: calc(var(--dot-size) / 2);
+    --dot-size-half-neg: calc(var(--dot-size-half) * -1|);
 
     display: block;
     position: relative;
-    width:var(--loader-size);
+    width: var(--loader-size);
     display: grid;
     place-items: center;
     color:white;
 }
-.loader::before,.loader::after{
+.loader::before,
+.loader::after {
     content:'';
     position: absolute;
 }
 /* loader--1 */
 
 .loader--1 {
-    --loader-size: calc(var(--block-size)/3);
+    --loader-size: calc(var(--block-size) / 3);
     --anim-duration: 1s;
-    --loader-1-dist: calc(var(--loader-size) - var(dot-size-half) + 1px);
+    --loader-1-dist: calc(var(--loader-size) - var(--dot-size-half) + 1px);
     aspect-ratio: 1 / 1;
     border: 1px solid var(--light-color);
 }
@@ -48,32 +43,32 @@
 animation-delay: calc(var(--anim-duration) / 4 * -1);
 }
 
-@keyframes loader-1{
-    0%, 100% { transform:none;} 
+@keyframes loader-1 {
+    0%, 100% { transform: none;} 
     25% { transform: translateX(var(--loader-1-dist));}
     50% { transform: translateX(var(--loader-1-dist)) translateY(var(--loader-1-dist));}
     75% { transform: translateX(0) translateY(var(--loader-1-dist));}
 }
 
 .container {
-    --block-size:18vmin;
-display:grid;
+    --block-size: 18vmin;
+display: grid;
 grid-template-columns: repeat(3,var(--block-size));
 grid-template-rows: repeat(3,var(--block-size));
-grid-gap:1vmin;
+grid-gap: 1vmin;
 }
 .item{
-    background:rgba(255,255,255,0.1);
+    background:rgba(255, 255, 255, 0.1);
     display: grid;
     place-items: center;
     border-radius: 4px;
     transition: opacity 0.4s ease;
 }
 .container:hover .item{
-    opacity:0.3;
+    opacity: 0.3;
 }
 .container:hover .item:hover{
-    opacity:1;
+    opacity: 1;
 }
 .page{
     margin:auto;
