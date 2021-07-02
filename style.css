@@ -57,6 +57,44 @@ grid-template-columns: repeat(3, var(--block-size));
 grid-template-rows: repeat(3, var(--block-size));
 grid-gap: 1vmin;
 }
+
+/* loader--2 */
+
+.loader--2 {
+    --loader-size: calc(var(--block-size) / 3);
+    --anim-duration: 1s;
+    height: 1px;
+    background-color: var(--light-color);
+}
+.loader--2::before,
+.loader--2::after {
+    width: var(--dot-size);
+    aspect-ratio: 1 / 1;
+    background: currentColor;
+    border-radius: 50%;
+    top: calc(var(--dot-size-half-neg) + 1px);
+    left: var(--dot-size-half-neg);
+    animation: loader-2 var(--anim-duration) cubic-bezier(0.27, 0.08, 0.26, 0.7) infinite;
+}
+.loader--2::after {
+animation-delay: calc(var(--anim-duration) / 3 * -1);
+
+}
+
+@keyframes loader-2 {
+    0%,100% { transform: none;} 
+    44% { transform: translateX(calc(var(--loader-size) + var(--dot-size-half)));}
+}
+
+
+.container {
+--block-size: 18vmin;
+display: grid;
+grid-template-columns: repeat(3, var(--block-size));
+grid-template-rows: repeat(3, var(--block-size));
+grid-gap: 1vmin;
+}
+
 .item {
     background:rgba(255, 255, 255, 0.1);
     display: grid;
