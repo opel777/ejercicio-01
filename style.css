@@ -180,10 +180,10 @@ animation-delay: calc(var(--anim-duration) / 2 * -1);
     transform-origin: left calc(var(--loader-size) * -1);
 }
 .loader--5::after {
---turn-deg: -60deg;
+--turn-deg: 60deg;
 --x-dist: 25%;
 transform-origin: right calc(var(--loader-size) * -1);
-animation-delay: calc(var(--anim-duration)7 2 * -1);
+animation-delay: calc(var(--anim-duration) / 2 * -1);
 }
 @keyframes loader-5{
     0%{transform:scale(0.3)translateZ(-15vmin) rotateY(calc(var(--turn-deg) * -1));}
